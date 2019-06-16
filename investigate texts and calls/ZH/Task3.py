@@ -50,7 +50,7 @@ for item in calls:
 for item in callFromBanga:
 	incoming = item[1]
 	if " " in incoming:
-		prefixList.append(incoming[0:5])
+		prefixList.append(incoming[0:4])
 	if "(0" in incoming:
 		prefixList.append(incoming[0:incoming.find(")")+1])
 	if incoming[0:3] == "140":

@@ -20,7 +20,7 @@ with open('calls.csv', 'r') as f:
 """
 my_list = []
 for item1 in texts:
-	my_list.append(item1[1])
+	my_list.append(item1[0])
 	my_list.append(item1[1])
 for item2 in calls:
 	my_list.append(item2[0])
