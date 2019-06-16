@@ -39,3 +39,27 @@ with open('calls.csv', 'r') as f:
 to other fixed lines in Bangalore."
 注意：百分比应包含2位小数。
 """
+
+callFromBanga = []
+prefixList = []
+
+for item in calls:
+	if "(080)" in item[0]:
+		callFromBanga.append(item)
+
+for item in callFromBanga:
+	incoming = item[1]
+	if " " in incoming:
+		prefixList.append(incoming[0:5])
+	if "(0" in incoming:
+		prefixList.append(incoming[0:incoming.find(")")+1])
+	if incoming[0:3] == "140":
+		prefixList.append("140")
+
+prefixListLite = list(set(prefixList))
+prefixListLite.sort()
+print("The numbers called by people in Bangalore have codes:")
+for item in prefixListLite:
+	print(item)
+
+print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(round(prefixList.count("(080)") / len(prefixList), 4) * 100))

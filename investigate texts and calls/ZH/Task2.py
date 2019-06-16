@@ -23,3 +23,26 @@ September 2016.".
 如果键不存在于字典内，将此键加入字典，并将它的值设为给定值。
 """
 
+my_dict = {}
+num = ""
+during = 0
+
+for item in calls:
+	if item[0] in my_dict:
+		my_dict[item[0]] += int(item[3])
+	else:
+		my_dict[item[0]] = int(item[3])
+
+	if item[1] in my_dict:
+		my_dict[item[1]] += int(item[3])
+	else:
+		my_dict[item[1]] = int(item[3])
+
+for item in my_dict:
+	if my_dict[item] > during:
+		during = my_dict[item]
+		num = item
+
+print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(num, during))
+
+
