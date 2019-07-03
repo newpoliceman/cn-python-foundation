@@ -46,13 +46,13 @@ def max3(d):
 cat_list = ["剧情", "喜剧", "动作"]
 loc_list = ["中国大陆", "美国", "香港", "台湾", "日本", "韩国", "英国", "法国", "德国", "意大利", "西班牙", "印度", "泰国", "俄罗斯", "伊朗", "加拿大", "澳大利亚", "爱尔兰", "瑞典", "巴西", "丹麦"]
 
-# with open('movies.csv','w') as f:
-# 	f_csv = csv.writer(f)
-# 	for category in cat_list:
-# 		for location in loc_list:
-# 			movie_list = getMovies(category, location)
-# 			for item in movie_list:
-# 				f_csv.writerow(item.allInfo())
+with open('movies.csv','w') as f:
+	f_csv = csv.writer(f)
+	for category in cat_list:
+		for location in loc_list:
+			movie_list = getMovies(category, location)
+			for item in movie_list:
+				f_csv.writerow(item.allInfo())
 
 with open('movies.csv', 'r') as f:
 	reader = csv.reader(f)
